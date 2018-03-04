@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,11 +39,16 @@ namespace Zadanie1
       
         private void MWLoad(object sender, EventArgs e)
         {
-            // TODO: Directory.GetFiles(".", "*.txt");
-            
-            LBPracownicy.Items.Add(Pracownik.Otworz("12345678901"));
-            LBPracownicy.Items.Add(Pracownik.Otworz("12345678902"));
-            LBPracownicy.Items.Add(Pracownik.Otworz("12345678903"));
+            var dane = Directory.GetFiles("./dane/", "*.txt");
+
+            foreach (var pesel in dane)
+            {
+                LBPracownicy.Items.Add(
+                    Pracownik.Otworz(
+                        Path.GetFileNameWithoutExtension(pesel)
+                    )
+                );
+            }
         }
 
         private void BEdytuj_Click(object sender, EventArgs e)
