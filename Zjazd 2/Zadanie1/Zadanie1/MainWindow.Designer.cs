@@ -48,7 +48,7 @@ namespace Zadanie1
         private void InitializeComponent()
         {
             this.LBPracownicy = new System.Windows.Forms.ListBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BEdytuj = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LBPracownicy
@@ -62,15 +62,16 @@ namespace Zadanie1
             this.LBPracownicy.Size = new System.Drawing.Size(297, 316);
             this.LBPracownicy.TabIndex = 0;
             // 
-            // button1
+            // BEdytuj
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(325, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 43);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BEdytuj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BEdytuj.Location = new System.Drawing.Point(325, 12);
+            this.BEdytuj.Name = "BEdytuj";
+            this.BEdytuj.Size = new System.Drawing.Size(148, 43);
+            this.BEdytuj.TabIndex = 1;
+            this.BEdytuj.Text = "Edytuj";
+            this.BEdytuj.UseVisualStyleBackColor = true;
+            this.BEdytuj.Click += new System.EventHandler(this.BEdytuj_Click);
             // 
             // MainWindow
             // 
@@ -78,7 +79,7 @@ namespace Zadanie1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(485, 348);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BEdytuj);
             this.Controls.Add(this.LBPracownicy);
             this.Name = "MainWindow";
             this.Text = "Pracownik.NET Krystian Duma 7763";
@@ -90,7 +91,7 @@ namespace Zadanie1
         #endregion
 
         private System.Windows.Forms.ListBox LBPracownicy;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BEdytuj;
     }
 }
 

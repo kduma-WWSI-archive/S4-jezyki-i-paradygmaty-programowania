@@ -52,5 +52,28 @@ namespace Zadanie1
             p.Nazwisko = "Nowak";
             LBPracownicy.Items.Add(p);
         }
+
+        private void BEdytuj_Click(object sender, EventArgs e)
+        {
+            if (LBPracownicy.SelectedItem != null)
+            {
+                var window = new EditEmployeeWindow();
+
+                window.Edytuj(
+                    (Pracownik) LBPracownicy.SelectedItem
+                );
+
+                window.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Aby edytować, zaznacz pracownika!",
+                    "Błąd!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
+        }
     }
 }

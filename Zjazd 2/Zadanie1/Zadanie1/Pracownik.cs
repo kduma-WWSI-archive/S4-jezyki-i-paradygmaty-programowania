@@ -25,7 +25,7 @@ using System.Threading.Tasks;
 
 namespace Zadanie1
 {
-    class Pracownik
+    public class Pracownik
     {
         public string Imie { get; set; }
 
@@ -64,7 +64,7 @@ namespace Zadanie1
             
         }
 
-        public void Zapis()
+        public void Zapisz()
         {
             // TODO: metoda ma zapisywać wszystkie dane osoby do pliku o nazwie [Pesel].txt
         }
@@ -73,7 +73,7 @@ namespace Zadanie1
         {
             var p = new Pracownik
             {
-                _pesel = "1234567890",
+                _pesel = "12345678901",
                 Imie = "Janusz",
                 Nazwisko = "Kowalski",
                 Miasto = "Warszawa",

@@ -181,6 +181,7 @@ namespace Zadanie1
             this.BZapisz.TabIndex = 14;
             this.BZapisz.Text = "Zapisz";
             this.BZapisz.UseVisualStyleBackColor = true;
+            this.BZapisz.Click += new System.EventHandler(this.BZapisz_Click);
             // 
             // EditEmployeeWindow
             // 
