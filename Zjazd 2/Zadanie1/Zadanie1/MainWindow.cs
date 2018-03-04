@@ -39,18 +39,10 @@ namespace Zadanie1
         private void MWLoad(object sender, EventArgs e)
         {
             // TODO: Directory.GetFiles(".", "*.txt");
-            var p = Pracownik.Otworz("12345678901");
-            LBPracownicy.Items.Add(p);
-
-            p = Pracownik.Otworz("12345678902");
-            p.Imie = "Ignacy";
-            p.Nazwisko = "Krasicki";
-            LBPracownicy.Items.Add(p);
-
-            p = Pracownik.Otworz("12345678903");
-            p.Imie = "Ewa";
-            p.Nazwisko = "Nowak";
-            LBPracownicy.Items.Add(p);
+            
+            LBPracownicy.Items.Add(Pracownik.Otworz("12345678901"));
+            LBPracownicy.Items.Add(Pracownik.Otworz("12345678902"));
+            LBPracownicy.Items.Add(Pracownik.Otworz("12345678903"));
         }
 
         private void BEdytuj_Click(object sender, EventArgs e)

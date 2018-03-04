@@ -19,9 +19,12 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+// ReSharper disable LocalizableElement
 
 namespace Zadanie1
 {
@@ -66,20 +69,22 @@ namespace Zadanie1
 
         public void Zapisz()
         {
-            // TODO: metoda ma zapisywać wszystkie dane osoby do pliku o nazwie [Pesel].txt
+            File.WriteAllText($"./dane/{_pesel}.txt", $"{Imie}\n{Nazwisko}\n{Miasto}\n{Ulica}\n{Pesel}\n{Stanowisko}\n{Pensja.ToString()}", Encoding.UTF8);
         }
 
-        public static Pracownik Otworz(string Pesel)
+        public static Pracownik Otworz(string pesel)
         {
-            var p = new Pracownik
+            var dane = File.ReadAllLines($"./dane/{pesel}.txt", Encoding.UTF8);
+
+            return new Pracownik
             {
-                _pesel = "12345678901",
-                Imie = "Janusz",
-                Nazwisko = "Kowalski",
-                Miasto = "Warszawa",
-                Ulica = "Warszawska 122",
-                Pensja = (decimal) 1234.56,
-                Stanowisko = "IT"
+                Imie = dane[0],
+                Nazwisko = dane[1],
+                Miasto = dane[2],
+                Ulica = dane[3],
+                _pesel = dane[4],
+                Stanowisko = dane[5],
+                Pensja = Convert.ToDecimal(dane[6])
             };
             
             // TODO: metoda tworzy obiekt Pracownik z danych pobranych z pliku i zwraca jego instancję.
@@ -87,8 +92,6 @@ namespace Zadanie1
             // 2.	tworzy obiekt Pracownik
             // 3.	uzupełnia dane
             // 4.	zwraca utworzony obiekt 
-
-            return p;
         }
 
         public override string ToString()

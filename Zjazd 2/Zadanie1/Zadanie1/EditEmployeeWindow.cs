@@ -69,8 +69,12 @@ namespace Zadanie1
             }
             catch (Exception exception)
             {
-                Console.WriteLine(exception);
-                throw;
+                MessageBox.Show(
+                    exception.Message,
+                    "Błąd!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
 
         }
