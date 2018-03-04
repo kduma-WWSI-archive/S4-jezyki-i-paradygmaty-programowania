@@ -39,6 +39,13 @@ namespace Zadanie1
       
         private void MWLoad(object sender, EventArgs e)
         {
+            ReloadValues();
+        }
+
+        private void ReloadValues()
+        {
+            LBPracownicy.Items.Clear();
+
             var dane = Directory.GetFiles("./dane/", "*.txt");
 
             foreach (var pesel in dane)
@@ -62,6 +69,7 @@ namespace Zadanie1
                 );
 
                 window.ShowDialog();
+                ReloadValues();
             }
             else
             {

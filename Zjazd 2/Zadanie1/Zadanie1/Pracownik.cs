@@ -86,12 +86,6 @@ namespace Zadanie1
                 Stanowisko = dane[5],
                 Pensja = Convert.ToDecimal(dane[6])
             };
-            
-            // TODO: metoda tworzy obiekt Pracownik z danych pobranych z pliku i zwraca jego instancję.
-            // 1.	otwiera plik o nazwie zgodnej z podanym peselem [pesel].txt 
-            // 2.	tworzy obiekt Pracownik
-            // 3.	uzupełnia dane
-            // 4.	zwraca utworzony obiekt 
         }
 
         public override string ToString()
