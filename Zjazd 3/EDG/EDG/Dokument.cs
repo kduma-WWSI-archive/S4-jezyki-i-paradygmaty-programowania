@@ -15,6 +15,8 @@ namespace EDG
         public Dokument()
         {
             InitializeComponent();
+
+            LUserName.Text = System.Environment.UserName;
         }
 
         private void BColor_Click(object sender, EventArgs e)
@@ -25,6 +27,16 @@ namespace EDG
         private void BFont_Click(object sender, EventArgs e)
         {
             // TODO: 2.a.i.2.a - Font Dialog
+        }
+
+        private void PB_Resize(object sender, EventArgs e)
+        {
+            LSize.Text = $"Rozmiar ({DocumentPictureBox.Width} x {DocumentPictureBox.Height})";
+        }
+
+        private void PB_MouseMove(object sender, MouseEventArgs e)
+        {
+            LMousePosition.Text = $"Kursor ({e.X} x {e.Y})";
         }
     }
 }
