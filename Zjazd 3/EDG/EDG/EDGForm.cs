@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EDG
 {
-    public partial class Form1 : Form
+    public partial class EDGForm : Form
     {
-        public Form1()
+        public EDGForm()
         {
             InitializeComponent();
         }

@@ -19,6 +19,11 @@ namespace EDG
             LUserName.Text = System.Environment.UserName;
         }
 
+        public void UstawZdjecie(string nazwaPliku)
+        {
+            DocumentPictureBox.Image = Image.FromFile(nazwaPliku);
+        }
+
         private void BColor_Click(object sender, EventArgs e)
         {
             // TODO: 2.a.i.1.a - Color Dialog
