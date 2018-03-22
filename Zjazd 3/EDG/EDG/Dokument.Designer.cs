@@ -42,6 +42,8 @@
             this.LMousePosition = new System.Windows.Forms.ToolStripStatusLabel();
             this.LSize = new System.Windows.Forms.ToolStripStatusLabel();
             this.DocumentPictureBox = new System.Windows.Forms.PictureBox();
+            this.CD = new System.Windows.Forms.ColorDialog();
+            this.FD = new System.Windows.Forms.FontDialog();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -217,5 +219,7 @@
         private System.Windows.Forms.ToolStripStatusLabel LMousePosition;
         private System.Windows.Forms.ToolStripStatusLabel LSize;
         private System.Windows.Forms.PictureBox DocumentPictureBox;
+        private System.Windows.Forms.ColorDialog CD;
+        private System.Windows.Forms.FontDialog FD;
     }
 }

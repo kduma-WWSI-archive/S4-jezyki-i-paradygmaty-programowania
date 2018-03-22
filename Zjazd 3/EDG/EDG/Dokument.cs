@@ -26,12 +26,17 @@ namespace EDG
 
         private void BColor_Click(object sender, EventArgs e)
         {
-            // TODO: 2.a.i.1.a - Color Dialog
+            if (CD.ShowDialog() != System.Windows.Forms.DialogResult.OK) return;
+
+            LFont.BackColor = CD.Color;
         }
 
         private void BFont_Click(object sender, EventArgs e)
         {
-            // TODO: 2.a.i.2.a - Font Dialog
+            if (FD.ShowDialog() != System.Windows.Forms.DialogResult.OK) return;
+
+            LFont.Text = FD.Font.FontFamily.Name;
+            LFont.Font = FD.Font;
         }
 
         private void PB_Resize(object sender, EventArgs e)
