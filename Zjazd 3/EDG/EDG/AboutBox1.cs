@@ -101,5 +101,23 @@ namespace EDG
             }
         }
         #endregion
+
+        public void SpalshScreen()
+        {
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            this.ControlBox = false;
+            this.UseWaitCursor = true;
+            progressBar1.Visible = true;
+            timer1.Enabled = true;
+            okButton.Visible = false;
+            ShowDialog();
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

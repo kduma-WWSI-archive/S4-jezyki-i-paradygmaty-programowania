@@ -28,7 +28,7 @@ namespace EDG
         {
             if (CD.ShowDialog() != System.Windows.Forms.DialogResult.OK) return;
 
-            LFont.BackColor = CD.Color;
+            BColor.BackColor = CD.Color;
         }
 
         private void BFont_Click(object sender, EventArgs e)

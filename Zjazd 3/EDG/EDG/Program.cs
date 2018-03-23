@@ -16,6 +16,13 @@ namespace EDG
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+
+            var dialog = new AboutBox1();
+            dialog.SpalshScreen();
+
+
+
             Application.Run(new EDGForm());
         }
     }
