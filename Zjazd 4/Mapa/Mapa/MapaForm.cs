@@ -40,6 +40,8 @@ namespace Mapa
             e.Graphics.ScaleTransform(3, 3);
             droga.Rysuj(e.Graphics);
             auto.Rysuj(e.Graphics);
+
+            Pozycja.Text = $@"Pozycja {auto.X:0} x {auto.Y:0} < {auto.Kierunek%360:0}";
         }
 
         private readonly StanyKlawiszy _klawisze = new StanyKlawiszy();

@@ -33,6 +33,7 @@ namespace Mapa
         {
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Pozycja = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // timer1
@@ -41,12 +42,23 @@ namespace Mapa
             this.timer1.Interval = 20;
             this.timer1.Tick += new System.EventHandler(this.Timer_Tick);
             // 
+            // Pozycja
+            // 
+            this.Pozycja.AutoSize = true;
+            this.Pozycja.ForeColor = System.Drawing.Color.White;
+            this.Pozycja.Location = new System.Drawing.Point(12, 9);
+            this.Pozycja.Name = "Pozycja";
+            this.Pozycja.Size = new System.Drawing.Size(35, 13);
+            this.Pozycja.TabIndex = 0;
+            this.Pozycja.Text = "label1";
+            // 
             // MapaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGreen;
             this.ClientSize = new System.Drawing.Size(709, 426);
+            this.Controls.Add(this.Pozycja);
             this.DoubleBuffered = true;
             this.MinimizeBox = false;
             this.Name = "MapaForm";
@@ -56,12 +68,14 @@ namespace Mapa
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MapaForm_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MapaForm_KeyUp);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private Timer timer1;
+        private Label Pozycja;
     }
 }
 

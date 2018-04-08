@@ -35,22 +35,22 @@ namespace Mapa
 
         public void Gaz()
         {
-            V += 5;
+            V += 0.5;
         }
 
         public void Hamuj()
         {
-            V -= 5;
+            V -= 0.5;
         }
 
         public void SkrecajLewo()
         {
-            Kierunek -= 5;
+            Kierunek -= 0.08 * V;
         }
 
         public void SkrecajPrawo()
         {
-            Kierunek += 5;
+            Kierunek += 0.08 * V;
         }
 
         public void Dzialaj(double dt)
