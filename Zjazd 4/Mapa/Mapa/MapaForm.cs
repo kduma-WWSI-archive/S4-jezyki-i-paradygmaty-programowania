@@ -42,33 +42,71 @@ namespace Mapa
             auto.Rysuj(e.Graphics);
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private readonly StanyKlawiszy _klawisze = new StanyKlawiszy();
+
+        private void Timer_Tick(object sender, EventArgs e)
         {
+            if (_klawisze.Left)
+                auto.SkrecajLewo();
+
+            if (_klawisze.Right)
+                auto.SkrecajPrawo();
+
+            if (_klawisze.Up)
+                auto.Gaz();
+
+            if (_klawisze.Down)
+                auto.Hamuj();
+
             auto.Dzialaj(0.02);
             Refresh();
         }
+
+
 
         private void MapaForm_KeyDown(object sender, KeyEventArgs e)
         {
             switch (e.KeyCode)
             {
                 case Keys.Left:
-                    auto.SkrecajLewo();
+                    _klawisze.Left = true;
                     break;
 
                 case Keys.Up:
-                    auto.Gaz();
+                    _klawisze.Up = true;
                     break;
 
                 case Keys.Right:
-                    auto.SkrecajPrawo();
+                    _klawisze.Right = true;
                     break;
 
                 case Keys.Down:
-                    auto.Hamuj();
+                    _klawisze.Down = true;
                     break;
             }
             
+        }
+
+        private void MapaForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Left:
+                    _klawisze.Left = false;
+                    break;
+
+                case Keys.Up:
+                    _klawisze.Up = false;
+                    break;
+
+                case Keys.Right:
+                    _klawisze.Right = false;
+                    break;
+
+                case Keys.Down:
+                    _klawisze.Down = false;
+                    break;
+            }
         }
     }
 }

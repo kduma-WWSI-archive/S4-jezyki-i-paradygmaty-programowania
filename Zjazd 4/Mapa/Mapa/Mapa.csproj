@@ -55,6 +55,7 @@
     <Compile Include="Pojazd.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StanyKlawiszy.cs" />
     <EmbeddedResource Include="MapaForm.resx">
       <DependentUpon>MapaForm.cs</DependentUpon>
     </EmbeddedResource>
