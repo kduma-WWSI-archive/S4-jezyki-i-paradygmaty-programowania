@@ -32,5 +32,34 @@ namespace Mapa
 
             g.Transform = m;
         }
+
+        public void Gaz()
+        {
+            V += 0.01;
+        }
+
+        public void Hamuj()
+        {
+            V -= 0.01;
+        }
+
+        public void SkrecajLewo()
+        {
+            Kierunek += 0.01;
+        }
+
+        public void SkrecajPrawo()
+        {
+            Kierunek -= 0.01;
+        }
+
+        public void Dzialaj(double dt)
+        {
+            var dx = V * Math.Cos(Kierunek * Math.PI / 180) * dt;
+            var dy = V * Math.Sin(Kierunek * Math.PI / 180) * dt;
+
+            X += dx;
+            Y += dy;
+        }
     }
 }
