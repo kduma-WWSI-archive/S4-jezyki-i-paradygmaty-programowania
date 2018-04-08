@@ -47,5 +47,28 @@ namespace Mapa
             auto.Dzialaj(0.02);
             Refresh();
         }
+
+        private void MapaForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Left:
+                    auto.SkrecajLewo();
+                    break;
+
+                case Keys.Up:
+                    auto.Gaz();
+                    break;
+
+                case Keys.Right:
+                    auto.SkrecajPrawo();
+                    break;
+
+                case Keys.Down:
+                    auto.Hamuj();
+                    break;
+            }
+            
+        }
     }
 }

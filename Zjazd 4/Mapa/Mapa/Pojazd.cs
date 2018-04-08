@@ -28,29 +28,29 @@ namespace Mapa
             g.RotateTransform((float)Kierunek+90);
             g.ScaleTransform(0.08f, 0.08f);
             // ReSharper disable once PossibleLossOfFraction
-            g.DrawImage(obraz, -obraz.Width/2, y: -obraz.Height/1.1f);
+            g.DrawImage(obraz, -obraz.Width/2, y: -obraz.Height/1.3f);
 
             g.Transform = m;
         }
 
         public void Gaz()
         {
-            V += 0.01;
+            V += 5;
         }
 
         public void Hamuj()
         {
-            V -= 0.01;
+            V -= 5;
         }
 
         public void SkrecajLewo()
         {
-            Kierunek += 0.01;
+            Kierunek -= 5;
         }
 
         public void SkrecajPrawo()
         {
-            Kierunek -= 0.01;
+            Kierunek += 5;
         }
 
         public void Dzialaj(double dt)

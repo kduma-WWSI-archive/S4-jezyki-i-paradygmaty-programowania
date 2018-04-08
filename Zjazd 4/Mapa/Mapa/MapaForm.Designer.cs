@@ -53,6 +53,7 @@ namespace Mapa
             this.Text = "Mapa";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MapaForm_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MapaForm_KeyDown);
             this.ResumeLayout(false);
 
         }
