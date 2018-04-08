@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Mapa
 {
-    public partial class Form1 : Form
+    public partial class MapaForm : Form
     {
-        public Form1()
+        public MapaForm()
         {
             InitializeComponent();
         }

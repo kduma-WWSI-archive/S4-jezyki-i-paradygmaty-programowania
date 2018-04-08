@@ -22,6 +22,7 @@ namespace Mapa
             _asfalt = new Pen(Color.DarkGray, 20)
             {
                 StartCap = LineCap.Round,
+                EndCap = LineCap.Round,
                 LineJoin = LineJoin.Round
             };
         }
