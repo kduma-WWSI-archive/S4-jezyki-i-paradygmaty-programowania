@@ -39,7 +39,7 @@ namespace Mapa
         {
             e.Graphics.ScaleTransform(3, 3);
             a1.Rysuj(e.Graphics);
-//            auto.Rysuj(e.Graphics);
+            auto.Rysuj(e.Graphics);
         }
     }
 }
