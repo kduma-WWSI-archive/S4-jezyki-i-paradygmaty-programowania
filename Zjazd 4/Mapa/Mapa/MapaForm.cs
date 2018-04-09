@@ -60,7 +60,7 @@ namespace Mapa
             if (_klawisze.Contains(Keys.Down))
                 auto.Hamuj();
 
-            auto.Dzialaj(0.02);
+            auto.Dzialaj(0.02, Width/3, Height/3);
             Refresh();
         }
 

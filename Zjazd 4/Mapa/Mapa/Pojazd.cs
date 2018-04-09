@@ -53,13 +53,25 @@ namespace Mapa
             Kierunek += 0.08 * V;
         }
 
-        public void Dzialaj(double dt)
+        public void Dzialaj(double dt, int width, int height)
         {
             var dx = V * Math.Cos(Kierunek * Math.PI / 180) * dt;
             var dy = V * Math.Sin(Kierunek * Math.PI / 180) * dt;
 
             X += dx;
             Y += dy;
+
+            if (X < 0)
+                X = width;
+
+            if (Y < 0)
+                Y = height;
+
+            if (X > width)
+                X = 0;
+
+            if (Y > height)
+                Y = 0;
         }
     }
 }
