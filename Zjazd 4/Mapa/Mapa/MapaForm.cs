@@ -44,20 +44,20 @@ namespace Mapa
             Pozycja.Text = $@"Pozycja {auto.X:0} x {auto.Y:0} < {auto.Kierunek%360:0}";
         }
 
-        private readonly StanyKlawiszy _klawisze = new StanyKlawiszy();
+        private readonly HashSet<Keys> _klawisze = new HashSet<Keys>();
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            if (_klawisze.Left)
+            if (_klawisze.Contains(Keys.Left))
                 auto.SkrecajLewo();
 
-            if (_klawisze.Right)
+            if (_klawisze.Contains(Keys.Right))
                 auto.SkrecajPrawo();
 
-            if (_klawisze.Up)
+            if (_klawisze.Contains(Keys.Up))
                 auto.Gaz();
 
-            if (_klawisze.Down)
+            if (_klawisze.Contains(Keys.Down))
                 auto.Hamuj();
 
             auto.Dzialaj(0.02);
@@ -68,47 +68,12 @@ namespace Mapa
 
         private void MapaForm_KeyDown(object sender, KeyEventArgs e)
         {
-            switch (e.KeyCode)
-            {
-                case Keys.Left:
-                    _klawisze.Left = true;
-                    break;
-
-                case Keys.Up:
-                    _klawisze.Up = true;
-                    break;
-
-                case Keys.Right:
-                    _klawisze.Right = true;
-                    break;
-
-                case Keys.Down:
-                    _klawisze.Down = true;
-                    break;
-            }
-            
+            _klawisze.Add(e.KeyCode);
         }
 
         private void MapaForm_KeyUp(object sender, KeyEventArgs e)
         {
-            switch (e.KeyCode)
-            {
-                case Keys.Left:
-                    _klawisze.Left = false;
-                    break;
-
-                case Keys.Up:
-                    _klawisze.Up = false;
-                    break;
-
-                case Keys.Right:
-                    _klawisze.Right = false;
-                    break;
-
-                case Keys.Down:
-                    _klawisze.Down = false;
-                    break;
-            }
+            _klawisze.Remove(e.KeyCode);
         }
     }
 }
