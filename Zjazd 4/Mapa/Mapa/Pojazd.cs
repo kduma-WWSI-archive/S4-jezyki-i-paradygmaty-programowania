@@ -13,11 +13,11 @@ namespace Mapa
         public double Y { get; set; }
         public double V { get; set; }
         public double Kierunek { get; set; }
-        private readonly Image obraz;
+        private readonly Image _obraz;
 
         public Pojazd()
         {
-            obraz = Image.FromFile("Images\\auto_czerwone.png");
+            _obraz = Image.FromFile("Images\\auto_czerwone.png");
         }
 
         public void Rysuj(Graphics g)
@@ -28,19 +28,19 @@ namespace Mapa
             g.RotateTransform((float)Kierunek+90);
             g.ScaleTransform(0.08f, 0.08f);
             // ReSharper disable once PossibleLossOfFraction
-            g.DrawImage(obraz, -obraz.Width/2, y: -obraz.Height/1.3f);
+            g.DrawImage(_obraz, -_obraz.Width/2, -_obraz.Height/1.3f);
 
             g.Transform = m;
         }
 
         public void Gaz()
         {
-            V += 0.5;
+            V += 0.5 + V * 0.01;
         }
 
         public void Hamuj()
         {
-            V -= 0.5;
+            V -= 0.5 + V * 0.1;
         }
 
         public void SkrecajLewo()
