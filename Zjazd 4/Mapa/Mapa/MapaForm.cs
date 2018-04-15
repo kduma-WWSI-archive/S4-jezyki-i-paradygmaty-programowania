@@ -12,11 +12,11 @@ namespace Mapa
 {
     public partial class MapaForm : Form
     {
-        private Droga droga;
-        private Pojazd auto;
+        private readonly Droga _droga;
+        private readonly Pojazd _auto;
         public MapaForm()
         {
-            auto = new Pojazd()
+            _auto = new Pojazd()
             {
                 X = 200,
                 Y = 200,
@@ -24,13 +24,13 @@ namespace Mapa
                 V = 10
             };
 
-            droga = new Droga();
-            droga.Punkty.Add(new PointF(20, 20));
-            droga.Punkty.Add(new PointF(200, 20));
-            droga.Punkty.Add(new PointF(200, 120));
-            droga.Punkty.Add(new PointF(250, 200));
-            droga.Punkty.Add(new PointF(50, 120));
-            droga.Punkty.Add(new PointF(20, 50));
+            _droga = new Droga();
+            _droga.Punkty.Add(new PointF(20, 20));
+            _droga.Punkty.Add(new PointF(200, 20));
+            _droga.Punkty.Add(new PointF(200, 120));
+            _droga.Punkty.Add(new PointF(250, 200));
+            _droga.Punkty.Add(new PointF(50, 120));
+            _droga.Punkty.Add(new PointF(20, 50));
 
             InitializeComponent();
         }
@@ -38,10 +38,10 @@ namespace Mapa
         private void MapaForm_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.ScaleTransform(3, 3);
-            droga.Rysuj(e.Graphics);
-            auto.Rysuj(e.Graphics);
+            _droga.Rysuj(e.Graphics);
+            _auto.Rysuj(e.Graphics);
 
-            Pozycja.Text = $@"Pozycja {auto.X:0} x {auto.Y:0} < {auto.Kierunek%360:0}";
+            Pozycja.Text = $@"Pozycja {_auto.X:0} x {_auto.Y:0} < {_auto.Kierunek%360:0}";
         }
 
         private readonly HashSet<Keys> _klawisze = new HashSet<Keys>();
@@ -49,18 +49,18 @@ namespace Mapa
         private void Timer_Tick(object sender, EventArgs e)
         {
             if (_klawisze.Contains(Keys.Left))
-                auto.SkrecajLewo();
+                _auto.SkrecajLewo();
 
             if (_klawisze.Contains(Keys.Right))
-                auto.SkrecajPrawo();
+                _auto.SkrecajPrawo();
 
             if (_klawisze.Contains(Keys.Up))
-                auto.Gaz();
+                _auto.Gaz();
 
             if (_klawisze.Contains(Keys.Down))
-                auto.Hamuj();
+                _auto.Hamuj();
 
-            auto.Dzialaj(0.02, Width/3, Height/3);
+            _auto.Dzialaj(0.02, Width/3, Height/3);
             Refresh();
         }
 
